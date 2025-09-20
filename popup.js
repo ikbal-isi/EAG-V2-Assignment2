@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyAjWBqYtWBaT04j8BqesXX6dfXUdgHT0FI";  // 🔑 Replace with your Gemini API key
+const API_KEY = "XXXXXXXX";  // 🔑 Replace with your Gemini API key
 const MODEL = "gemini-2.5-flash";
 
 const roleSelect = document.getElementById("role");
