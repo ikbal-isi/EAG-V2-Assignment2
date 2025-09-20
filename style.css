@@ -1,0 +1,150 @@
+:root {
+  --primary-color: #007BFF; /* A vibrant blue for main elements */
+  --secondary-color: #28A745; /* A strong green for action/success */
+  --accent-color: #FFC107; /* A bright yellow/orange for highlights */
+  --background-color: #E9F5FF; /* A very light, calming blue for the overall background */
+  --card-background: #FFFFFF; /* Pure white for card backgrounds */
+  --border-color: #B2D1FF; /* A lighter blue for borders */
+  --text-color: #343A40; /* Dark charcoal for main text */
+  --light-text-color: #6C757D; /* Muted gray for secondary text */
+  --shadow-color: rgba(0, 123, 255, 0.2); /* Blueish shadow */
+  --hover-shadow-color: rgba(0, 123, 255, 0.3);
+  --question-bg-color: #F8F9FA; /* Off-white for question background */
+}
+
+html, body {
+    /* Maximum width for Chrome extension popups is ~800px */
+    min-width: 800px;
+    width: 800px; /* Set to maximum allowable width for browser extensions */
+    padding: 0;
+    margin: 0;
+    background: var(--background-color);
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text-color);
+    overflow-x: hidden; /* Prevent horizontal scrollbar if content slightly exceeds */
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px; /* Increased gap */
+  padding: 40px; /* Increased padding */
+  background: var(--card-background);
+  border-radius: 18px; /* More rounded corners */
+  box-shadow: 0 10px 40px var(--shadow-color); /* Stronger shadow for depth */
+  max-width: 800px; /* Ensure app itself respects width */
+  margin: 25px auto; /* Center the app and provide more vertical space */
+}
+
+h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 30px; /* More space below heading */
+  font-size: 2.5em; /* Larger heading */
+  border-bottom: 3px solid var(--border-color);
+  padding-bottom: 18px;
+  font-weight: 800; /* Extra bold for prominent heading */
+  letter-spacing: 1px; /* Slight letter spacing for style */
+}
+
+label {
+  font-weight: 700; /* Bold labels */
+  margin-bottom: 10px; /* More space below labels */
+  display: block;
+  color: var(--primary-color); /* Use primary color for labels */
+  font-size: 1.1em; /* Slightly larger font for labels */
+}
+
+select {
+  width: 100%;
+  padding: 14px; /* Increased padding */
+  border-radius: 10px; /* More rounded */
+  border: 1px solid var(--border-color);
+  font-size: 17px; /* Slightly larger font */
+  background-color: var(--card-background);
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007BFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%00-13-5.4H18.4c-6.5%200-12.3%203.2-16.1%208.1-3.7%204.9-4.9%2011-3.1%2016.9l132.8%20140c5.3%205.7%2013%208.9%2021%208.9%208.1%200%2015.7-3.2%2021-8.9l132.8-140c1.8-5.9%200.6-12-3.1-16.9z%22%2F%3E%3C%2Fsvg%3E'); /* Blue arrow */
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 16px;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.08); /* Inner shadow for depth */
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+button {
+  grid-column: 1 / -1;
+  padding: 18px; /* Larger padding */
+  border-radius: 12px; /* More rounded buttons */
+  border: none;
+  font-size: 1.2em; /* Larger font */
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  letter-spacing: 0.5px;
+}
+
+#generate {
+  background: var(--primary-color);
+  color: white;
+  margin-top: 25px;
+}
+
+#generate:hover {
+  background: #0056B3; /* Darker primary on hover */
+  transform: translateY(-4px); /* More pronounced lift */
+  box-shadow: 0 8px 20px var(--hover-shadow-color);
+}
+
+#downloadButtonContainer {
+  /* This will be removed from popup.html, but keeping the style in case it's added back */
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#downloadPdf {
+  /* This will be removed from popup.html, but keeping the style in case it's added back */
+  background: var(--secondary-color);
+  color: white;
+}
+
+#downloadPdf:hover {
+  /* This will be removed from popup.html, but keeping the style in case it's added back */
+  background: #218838; /* Darker secondary on hover */
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3); /* Greenish shadow */
+}
+
+#output {
+  grid-column: 1 / -1;
+  margin-top: 40px; /* More space above output */
+  max-height: 650px; /* Increased height for output */
+  overflow-y: auto;
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.08); /* Inner shadow for depth */
+  line-height: 1.8; /* Improved line spacing for readability */
+}
+
+.question {
+  background: var(--question-bg-color); /* Light background for questions */
+  margin-bottom: 18px;
+  padding: 18px 25px;
+  border-radius: 12px;
+  font-size: 1.15em; /* Larger font size for questions */
+  border-left: 7px solid var(--accent-color); /* Highlight with accent color */
+  color: var(--text-color);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Ensure sufficient contrast for accessibility */
+select:focus, button:focus {
+outline: 3px solid var(--accent-color);
+outline-offset: 3px;
+}

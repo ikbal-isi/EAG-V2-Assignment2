@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interview Prep</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Removed jspdf library as download functionality is being removed -->
+</head>
+<body>
+  <div id="app">
+    <h2>💼 Interview Preparation</h2>
+
+    <!-- Job Role -->
+    <label for="role">Select Job Role</label>
+    <select id="role">
+      <option value="">--Choose Role--</option>
+      <option>Frontend Developer</option>
+      <option>Backend Developer</option>
+      <option>ML Engineer</option>
+      <option>AI Engineer</option>
+      <option>Data Scientist</option>
+      <option>Data Engineer</option>
+      <option>MLOps/DevOps</option>
+    </select>
+
+    <!-- Round -->
+    <label for="round">Select Interview Round</label>
+    <select id="round">
+      <option value="">--Choose Round--</option>
+    </select>
+
+    <!-- Sub-option (language/domain) -->
+    <label for="subOption" id="subOptionLabel" style="display:none;">Select Focus</label>
+    <select id="subOption" style="display:none;">
+      <option value="">--Choose--</option>
+    </select>
+
+    <button id="generate">✨ Generate Questions</button>
+
+    <!-- Removed download button container -->
+
+    <div id="output"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
+
+
